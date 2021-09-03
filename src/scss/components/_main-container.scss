@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.main-container {
+    background: $grey;
+    font-size: $font-size;
+    color: $text-color;
+}

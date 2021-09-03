@@ -1,6 +1,83 @@
-$red: red;
-$grey: grey;
-
-body {
-    background: $grey;
+@use "abstracts" as *;
+@use "components/main-container";
+@mixin content{
+    height: 30vh;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 }
+
+*{
+    // font-size: 62.5%;
+    // scroll-padding-top: 5.5rem;
+    // scroll-behavior: smooth;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gotham Rounded', sans-serif;
+    // transition: all .2s linear;
+    text-decoration: none;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    font-family: sans-serif;
+    color: white;
+    .location{
+        @include content;
+    }
+
+    .temperature{
+        @include content;
+        flex-direction: column;
+    }
+
+    .degree-section{
+        display: flex;
+        align-items: center;
+
+        h2{
+            font-size: 40px;
+            align-items: center;
+            cursor: pointer;
+        }
+        span{
+            margin: 10px;
+            font-size: 30px;
+        }
+    }
+
+    .loader-container{
+        position: fixed;
+        top:0; left:0;
+        height:100%; 
+        width:100%;
+        z-index: 10000;
+        background:#fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+            img{
+             width:35rem;
+            }
+        }
+        
+        .fade-out{
+            opacity:0;
+        }
+        
+    
+    
+}
+
+
