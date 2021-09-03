@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss/main.scss"],"names":[],"mappings":"AAGA;EACI,YAHG","file":"main.77bb5cfd.css","sourceRoot":"../src","sourcesContent":["$red: red;\n$grey: grey;\n\nbody {\n    background: $grey;\n}"]}
