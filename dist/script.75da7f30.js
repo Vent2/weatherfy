@@ -119,8 +119,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"script.js":[function(require,module,exports) {
 window.addEventListener('load', function () {
+  var DARK_SKY_APIKEY = undefined;
   var long;
   var lat;
+  var temperatureDescription = document.querySelector('.temperature-description');
+  var temperatureDegree = document.querySelector('.temperature-degree');
+  var locationTimezone = document.querySelector('.location-timezone');
+  var iconLocation = document.querySelector('.icon');
+  var temperatureSection = document.querySelector('.degree-section');
+  var temperatureSpan = document.querySelector('.degree-section span');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -132,12 +139,39 @@ window.addEventListener('load', function () {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "dark-sky.p.rapidapi.com",
-          "x-rapidapi-key": "ec5a0bdab9msh9473d016b97e789p1b1b26jsn4dd63aa6c2cd"
+          "x-rapidapi-key": DARK_SKY_APIKEY
         }
       }).then(function (resp) {
         return resp.json();
       }).then(function (data) {
+        //Get Elements from API
         console.log(data);
+        var _data$currently = data.currently,
+            temperature = _data$currently.temperature,
+            summary = _data$currently.summary,
+            icon = _data$currently.icon; //Set DOM Elements from API
+
+        temperatureDegree.textContent = Math.floor(temperature);
+        temperatureDescription.textContent = summary;
+        locationTimezone.textContent = data.timezone; // Formula for celsius
+
+        var celsius = (temperature - 32) * (5 / 9); //Set Icon
+
+        setIcon = new Skycons({
+          color: 'whitesmoke'
+        });
+        setIcon.set(iconLocation, icon);
+        setIcon.play(); //Change temperature to Celsius/Fahrenheit
+
+        temperatureSection.addEventListener('click', function () {
+          if (temperatureSpan.textContent === "F") {
+            temperatureSpan.textContent = "C";
+            temperatureDegree.textContent = Math.floor(celsius);
+          } else {
+            temperatureSpan.textContent = "F";
+            temperatureDegree.textContent = Math.floor(temperature);
+          }
+        });
       }).catch(function (err) {
         console.error(err);
       });
@@ -150,7 +184,7 @@ function loader() {
 }
 
 function fadeOut() {
-  setInterval(loader, 2000);
+  setInterval(loader, 1700);
 }
 
 window.onload = fadeOut;
@@ -182,7 +216,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45479" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40125" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

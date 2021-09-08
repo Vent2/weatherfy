@@ -2,17 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/main.scss">
-    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCra3Y4vmmqlqOFHx4HOmo7X0qQMwV217U&libraries=places"></script>
+    <!-- <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCra3Y4vmmqlqOFHx4HOmo7X0qQMwV217U&libraries=places"></script> -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
     <script defer src="script.js"></script>
     <title>Weatherfy</title>
 </head>
 <body>
+    <div class="icon-section">
+    <canvas class="icon" width="130" height="130"></canvas>
+    </div>
+    <div class="information">
+        <h1 class="location-timezone">Timezone</h1>
+        <div class="degree-section">
+            <h2 class="temperature-degree">34</h2>
+            <span>F</span>    
+            <div class="temperature-description">It's Cold</div>
+            </div>
+    </div>
+<div class="city-search-container">
+<input type="text" class="city-search" data-city-search placeholder="Enter Location">
+</div>
+
+
+
+
+
+
+    <!-- Working Setup -->
+    <!-- <div class="icon-section">
+        <canvas class="icon" width="128" height="128"></canvas>
+    </div>
     <div class="location">
         <h1 class="location-timezone">Timezone</h1>
-        <p>Icon</p>
     </div>
     <div class="temperature">
         <div class="degree-section">
@@ -20,14 +44,13 @@
             <span>F</span>    
         </div>
         <div class="temperature-description">It's Cold</div>
-    </div>
+    </div> -->
 <!-- loader part  -->
 <div class="loader-container">
     <div class='loader-ring'>
         <div class='loader-ring-light'></div>
         <div class='loader-ring-track'></div>
-      </div>
-      
+    </div>
 </div>
 </body>
 </html>
