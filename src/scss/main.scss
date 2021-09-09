@@ -1,14 +1,7 @@
 @use "abstracts" as *;
 @use "components/main-container";
 
-
-@mixin content{
-      height: 30vh;
-          width: 50%;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-  }
+///////////////////////////////////////////
   html{
     font-size: 62.5%;
     overflow: hidden;
@@ -106,7 +99,14 @@
               }
       }
       }
-
+      .weatherfy{
+        width: 50rem;
+        border: 1px solid red;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        transform: translate(-90%, -90%);
+      }
 
     ///////////////Loading Animation//////////////////
     .loader-container{

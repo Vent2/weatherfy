@@ -77,6 +77,15 @@ body .container .city-search {
   text-align: center;
 }
 
+.weatherfy {
+  width: 50rem;
+  border: 1px solid red;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  transform: translate(-90%, -90%);
+}
+
 .loader-container {
   position: fixed;
   top: 0;
