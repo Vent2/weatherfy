@@ -14,7 +14,8 @@ function setWeatherData(data, place = data.timezone.split('/')[1].replace (/_/g,
   temperatureDescription.textContent = data.currently.summary;
   temperatureDegree.textContent = Math.floor(data.currently.temperature);
   let celsius = (data.currently.temperature - 32) * (5 / 9);
-  
+  temperatureSpan.textContent = 'F';
+  //Set Icon
   setIcon = new Skycons({color: 'whitesmoke'});
   setIcon.set(iconLocation, data.currently.icon);
   setIcon.play();
@@ -27,8 +28,9 @@ function setWeatherData(data, place = data.timezone.split('/')[1].replace (/_/g,
       temperatureSpan.textContent = "F";
       temperatureDegree.textContent = Math.floor(data.currently.temperature);
     }
-  })}
-  
+  })
+}
+
   
 
 searchBox.addListener('places_changed', () => {
@@ -58,15 +60,17 @@ searchBox.addListener('places_changed', () => {
 
   
   
-  window.addEventListener('load', () => {
-    let long;
-    let lat;
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        long = position.coords.longitude;
-        lat = position.coords.latitude;
+  // window.addEventListener('load', () => {
+  //   let long;
+  //   let lat;
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(position => {
+  //       long = position.coords.longitude;
+  //       lat = position.coords.latitude;
 
-        fetchingData(lat, long);
+  //       fetchingData(lat, long);
+
+
         //   const proxy = 'https://cors-anywhere.herokuapp.com/';        
       //   const api = `https://dark-sky.p.rapidapi.com/${lat},${long}?lang=en&units=auto` 
         
@@ -108,8 +112,10 @@ searchBox.addListener('places_changed', () => {
       //         console.error(err);
       //     });
       // });
-    })
-  }});
+
+
+  //   })
+  // }});
   
   
   

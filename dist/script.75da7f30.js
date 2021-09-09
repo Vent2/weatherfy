@@ -135,6 +135,8 @@ function setWeatherData(data) {
   temperatureDescription.textContent = data.currently.summary;
   temperatureDegree.textContent = Math.floor(data.currently.temperature);
   var celsius = (data.currently.temperature - 32) * (5 / 9);
+  temperatureSpan.textContent = 'F'; //Set Icon
+
   setIcon = new Skycons({
     color: 'whitesmoke'
   });
@@ -170,57 +172,55 @@ searchBox.addListener('places_changed', function () {
   }).catch(function (err) {
     console.error(err);
   });
-});
-window.addEventListener('load', function () {
-  var long;
-  var lat;
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      long = position.coords.longitude;
-      lat = position.coords.latitude;
-      fetchingData(lat, long); //   const proxy = 'https://cors-anywhere.herokuapp.com/';        
-      //   const api = `https://dark-sky.p.rapidapi.com/${lat},${long}?lang=en&units=auto` 
-      //   fetch(api, {
-      //     "method": "GET",
-      //     "headers": {
-      //       "x-rapidapi-host": "dark-sky.p.rapidapi.com",
-      //       "x-rapidapi-key": 'ec5a0bdab9msh9473d016b97e789p1b1b26jsn4dd63aa6c2cd'
-      //     }
-      //   })
-      //   .then(resp => resp.json())
-      //   .then(data => {
-      //     //Get Elements from API
-      //     // console.log(data);
-      //     const {temperature, summary, icon} = data.currently;
-      //     //Set DOM Elements from API
-      //     temperatureDegree.textContent = Math.floor(temperature);
-      //     temperatureDescription.textContent = summary;
-      //     locationTimezone.textContent = data.timezone;
-      //     // Formula for celsius
-      //     let celsius = (temperature - 32) * (5 / 9);
-      //     //Set Icon
-      //       setIcon = new Skycons({color: 'whitesmoke'});
-      //       setIcon.set(iconLocation, icon);
-      //       setIcon.play();
-      //     //Change temperature to Celsius/Fahrenheit
-      //     temperatureSection.addEventListener('click', () => {
-      //       if(temperatureSpan.textContent === "F") {
-      //         temperatureSpan.textContent = "C"
-      //         temperatureDegree.textContent = Math.floor(celsius);
-      //       } else {
-      //         temperatureSpan.textContent = "F";
-      //         temperatureDegree.textContent = Math.floor(temperature);
-      //       }
-      //     })
-      //     })
-      //     .catch(err => {
-      //         console.error(err);
-      //     });
-      // });
-    });
-  }
-});
+}); // window.addEventListener('load', () => {
+//   let long;
+//   let lat;
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(position => {
+//       long = position.coords.longitude;
+//       lat = position.coords.latitude;
+//       fetchingData(lat, long);
+//   const proxy = 'https://cors-anywhere.herokuapp.com/';        
+//   const api = `https://dark-sky.p.rapidapi.com/${lat},${long}?lang=en&units=auto` 
+//   fetch(api, {
+//     "method": "GET",
+//     "headers": {
+//       "x-rapidapi-host": "dark-sky.p.rapidapi.com",
+//       "x-rapidapi-key": 'ec5a0bdab9msh9473d016b97e789p1b1b26jsn4dd63aa6c2cd'
+//     }
+//   })
+//   .then(resp => resp.json())
+//   .then(data => {
+//     //Get Elements from API
+//     // console.log(data);
+//     const {temperature, summary, icon} = data.currently;
+//     //Set DOM Elements from API
+//     temperatureDegree.textContent = Math.floor(temperature);
+//     temperatureDescription.textContent = summary;
+//     locationTimezone.textContent = data.timezone;
+//     // Formula for celsius
+//     let celsius = (temperature - 32) * (5 / 9);
+//     //Set Icon
+//       setIcon = new Skycons({color: 'whitesmoke'});
+//       setIcon.set(iconLocation, icon);
+//       setIcon.play();
+//     //Change temperature to Celsius/Fahrenheit
+//     temperatureSection.addEventListener('click', () => {
+//       if(temperatureSpan.textContent === "F") {
+//         temperatureSpan.textContent = "C"
+//         temperatureDegree.textContent = Math.floor(celsius);
+//       } else {
+//         temperatureSpan.textContent = "F";
+//         temperatureDegree.textContent = Math.floor(temperature);
+//       }
+//     })
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });
+// });
+//   })
+// }});
 
 function fetchingData(lat, long) {
   return fetch("https://dark-sky.p.rapidapi.com/".concat(lat, ",").concat(long, "?lang=en&units=auto"), {
@@ -273,7 +273,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38539" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44827" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
