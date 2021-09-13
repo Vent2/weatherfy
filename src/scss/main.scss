@@ -1,8 +1,8 @@
 @use "abstracts" as *;
-@use "components/main-container";
+@use "components";
 
-///////////////////////////////////////////
-  html{
+
+html{
     font-size: 62.5%;
     overflow: hidden;
     margin: 0;
@@ -11,175 +11,19 @@
     font-family: 'Gotham Rounded', sans-serif;
     text-decoration: none;
     color: white;
-  }
+}
   
-  body{
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      background-color: #70a1ff;
-      background-image: linear-gradient(315deg, #70a1ff 0%, #c2c0c0 74%);
-
-      .container{
-       
-          width: 1000px;
-          max-width: 90%;
-          background-color: transparent;
-          box-shadow: 0 5px 10px black;
-          border-radius: 5px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items:center;
-          
-          .information{
-            // @include content;
-            //
-
-              // flex-direction: column;
-              h1{
-                  font-size: clamp(3rem, 7vw, 5rem);
-                  // border-bottom: 1px solid red;
-                  text-align: center;
-              }
-              // border: 1px solid blue;
-            }
-            
-            
-            .degree-section{
-            
-              display: flex;
-              // flex-direction: row;
-              align-items: center;
-              color: #4683f5;
-              // border: 1px solid red;
-              text-align: center;
-              
-              // .split{
-              //   border: 1px solid red;
-                
-              //   left: 500px;
-                
-              // }
-              h2{
-                padding-left: 2rem;
-                font-size: clamp(2rem, 7vw, 5rem);
-                cursor: pointer;
-              }
-              span{
-                margin: 1rem;
-                font-size: 1.5rem;
-              }
-            }
-            .temperature-description{
-                color: white;
-                font-size: 3rem;
-                padding: 2rem; 
-                font-size: clamp(2rem, 5vw, 4rem);
-              }
-              .city-search-container {
-                display: flex;
-                justify-content: center;
-                // border: solid 1px white;
-                width: 100%;
-              }
-              
-              .city-search {
-                margin: 1rem;
-                font-size: 2rem;
-                outline: none;
-                border: 0.2rem solid #777;
-                border-radius: 1em;
-                padding: 0.8rem 1.5rem;
-                width: clamp(20em, 35em);
-                text-align: center;
-              }
-      }
-      }
-      .weatherfy{
-        width: 50rem;
-        border: 1px solid red;
-        position: relative;
-        top: 5px;
-        left: 5px;
-        transform: translate(-90%, -90%);
-      }
-
-    ///////////////Loading Animation//////////////////
-    .loader-container{
-        position: fixed;
-        top:0; left:0;
-        height:100%; 
-        width:100%;
-        z-index: 10000;
-        background-color: #70a1ff;
-        background-image: linear-gradient(315deg, #70a1ff 0%, #c2c0c0 74%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        transition: all .5s ease-in-out;
-            img{
-             width:35rem;
-            }
-            .loader-ring {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              margin: -120px 0 0 -120px;
-              width: 240px;
-              height: 240px;
-              .loader-ring-light {
-                width: 240px;
-                height: 240px;
-                -moz-border-radius: 240px;
-                -webkit-border-radius: 240px;
-                border-radius: 240px;
-                -moz-box-shadow: 0 4px 0 #00abf2 inset;
-                -webkit-box-shadow: 0 4px 0 #00abf2 inset;
-                box-shadow: 0 4px 0 #00abf2 inset;
-                animation: rotate-360 2s linear infinite;
-              }
-              
-              .loader-ring-track {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 240px;
-                height: 240px;
-                -moz-border-radius: 240px;
-                -webkit-border-radius: 240px;
-                border-radius: 240px;
-                -moz-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
-                -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
-                box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
-              }
-            }
-            
-            
-            @keyframes rotate-360 {
-              from {
-                -moz-transform: rotate(0);
-                -ms-transform: rotate(0);
-                -webkit-transform: rotate(0);
-                transform: rotate(0);
-              }
-              to {
-                -moz-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-              }
-            }
-        }
-        
-        .fade-out{
-          z-index: -1;
-            opacity:0;
-        }
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #70a1ff;
+  background-image: linear-gradient(315deg, #70a1ff 0%, #c2c0c0 74%);
+}
+      
 
 
  

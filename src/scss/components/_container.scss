@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+@use "components/city-search";
+
+.container{
+       
+    width: 1000px;
+    max-width: 90%;
+    background-color: transparent;
+    box-shadow: 0 5px 10px black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    
+    .information{
+        h1{
+            font-size: clamp(3rem, 7vw, 5rem);
+            text-align: center;
+        }
+      }
+      
+      
+      .degree-section{
+        display: flex;
+        align-items: center;
+        color: #4683f5;
+        text-align: center;
+        h2{
+          padding-left: 2rem;
+          font-size: clamp(2rem, 7vw, 5rem);
+          cursor: pointer;
+        }
+        span{
+          margin: 1rem;
+          font-size: 1.5rem;
+        }
+      }
+      .temperature-description{
+          color: white;
+          font-size: 3rem;
+          padding: 2rem; 
+          font-size: clamp(2rem, 5vw, 4rem);
+        }
+}

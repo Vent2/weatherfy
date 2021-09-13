@@ -1,0 +1,18 @@
+
+.city-search-container {
+      display: flex;
+      justify-content: center;
+      // border: solid 1px white;
+      width: 100%;
+    }
+    
+    .city-search {
+      margin: 1rem;
+      font-size: 2rem;
+      outline: none;
+      border: 0.2rem solid #777;
+      border-radius: 1em;
+      padding: 0.8rem 1.5rem;
+      width: clamp(20em, 35em);
+      text-align: center;
+    }
