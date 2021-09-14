@@ -1,5 +1,4 @@
-// let GOOGLE_APIKEY = process.env.GOOGLE_APIKEY;
-// let DARK_SKY_APIKEY = process.env.DARK_SKY_APIKEY;
+
 const searchElement = document.querySelector('[data-city-search]');
 const temperatureDescription = document.querySelector('.temperature-description');
 const temperatureDegree = document.querySelector('.temperature-degree');

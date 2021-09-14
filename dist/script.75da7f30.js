@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-// let GOOGLE_APIKEY = process.env.GOOGLE_APIKEY;
-// let DARK_SKY_APIKEY = process.env.DARK_SKY_APIKEY;
 var searchElement = document.querySelector('[data-city-search]');
 var temperatureDescription = document.querySelector('.temperature-description');
 var temperatureDegree = document.querySelector('.temperature-degree');
@@ -229,7 +227,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43615" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34095" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
