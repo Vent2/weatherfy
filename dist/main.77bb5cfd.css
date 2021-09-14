@@ -26,6 +26,9 @@
   justify-content: center;
   align-items: center;
 }
+.container .icon {
+  padding-top: 1rem;
+}
 .container .information h1 {
   font-size: clamp(3rem, 7vw, 5rem);
   text-align: center;
